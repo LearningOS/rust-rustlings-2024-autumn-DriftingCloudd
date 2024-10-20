@@ -33,6 +33,9 @@ unsafe fn modify_by_address(address: usize) {
     // comment of the test below as your format reference.
     unsafe {
         todo!("Your code goes here")
+    // SAFETY: The caller must ensure that the address is valid and points to a mutable `u32`.
+    let ptr = address as *mut u32;
+    *ptr = 0xAABBCCDD;
     }
 }
 
